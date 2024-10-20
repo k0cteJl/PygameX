@@ -10,7 +10,6 @@ class MainGame(Game):
     clicks = 0
 
     background_color = (randint(0, 255), randint(0, 255), randint(0, 255))
-    object_render_mode = True
 
     def init(self):
         click_counter = TextDisplay(

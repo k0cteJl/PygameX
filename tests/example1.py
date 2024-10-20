@@ -6,8 +6,8 @@ from PygameX.game import *
 
 
 class MainGame(Game):
-    background_color = color.BLUE
-    object_render_mode = True
+
+    background_color = PygameX.color.BLUE
 
     def ready(self):
         player = Circle(

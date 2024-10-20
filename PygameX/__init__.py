@@ -13,4 +13,4 @@ import PygameX.math as math
 
 pygame.font.init()
 
-print(f"PygameX 0.1.6")
+print(f"PygameX 0.2")

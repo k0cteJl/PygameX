@@ -10,7 +10,6 @@ class Game:
     """
 
     background_color = (0, 0, 0)
-    object_render_mode = False
     objects = {}
 
     def __init__(self, width: int = 100, height: int = 100, caption: str = "PygameX Game", max_fps: int = 60):
@@ -41,7 +40,7 @@ class Game:
                             (pygame.mouse.get_pos(), e.button, pygame.mouse.get_pressed()[e.button - 1]))
 
             # rendering
-            self.render()
+            self.__render__()
 
             # visualization
             pygame.display.flip()
@@ -73,9 +72,8 @@ class Game:
         if event.type == key.QUIT:
             self.running = False
 
-    def render(self):
+    def __render__(self):
         self.screen.fill(self.background_color)
-        if self.object_render_mode:
-            for obj in self.objects.keys():
-                if issubclass(self.objects[obj].__class__, Object):
-                    self.objects[obj].render(self.screen)
+        for obj in self.objects.keys():
+            if issubclass(self.objects[obj].__class__, Object):
+                self.objects[obj].render(self.screen)
