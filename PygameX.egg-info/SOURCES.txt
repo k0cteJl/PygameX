@@ -18,4 +18,5 @@ PygameX/objects/Circle.py
 PygameX/objects/Line.py
 PygameX/objects/Object.py
 PygameX/objects/Rect.py
+PygameX/objects/Sprite.py
 PygameX/objects/TextDisplay.py
