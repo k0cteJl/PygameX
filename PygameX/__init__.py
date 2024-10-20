@@ -9,4 +9,4 @@ from .game import *
 
 pygame.font.init()
 
-print(f"PygameX 0.1.3")
+print(f"PygameX 0.1.5")

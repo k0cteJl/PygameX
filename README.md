@@ -255,7 +255,6 @@ First, let's save our script in `MyCustomObject`, and then import it into the ga
 import PygameX
 
 from PygameX.game import *
-from PygameX.all_objects import *
 from .MyCustomObject import MyCustomObject # I immediately import the object
 
 from random import randint
