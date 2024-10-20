@@ -7,10 +7,9 @@ from PygameX.objects.TextDisplay import TextDisplay
 
 
 class MainGame(Game):
-
     clicks = 0
 
-    background_color = (randint(0,255),randint(0,255),randint(0,255))
+    background_color = (randint(0, 255), randint(0, 255), randint(0, 255))
     object_render_mode = True
 
     def init(self):
@@ -23,8 +22,8 @@ class MainGame(Game):
 
         clicker = Circle(
             radius=100,
-            position=(250,250),
-            color=(randint(0,255),randint(0,255),randint(0,255))
+            position=(250, 250),
+            color=(randint(0, 255), randint(0, 255), randint(0, 255))
         )
         self.objects["clicker"] = clicker
 
@@ -38,6 +37,7 @@ class MainGame(Game):
         if PygameX.math.is_point_inside_circle(mouse[0], clicker):
             self.clicks += 1
             self.objects["click_counter"].set_text(f"Clicks: {self.clicks}")
-            clicker.color = (randint(0,255),randint(0,255),randint(0,255))
+            clicker.color = (randint(0, 255), randint(0, 255), randint(0, 255))
+
 
 MainGame(width=500, height=500, max_fps=60)

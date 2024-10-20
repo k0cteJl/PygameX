@@ -1,17 +1,21 @@
-
 # PyGameX
 
 ### Description
 
-An easy-to-learn library that makes Pygame more structured and user-friendly. The library has many built-in functions that simplify development at times.
+An easy-to-learn library that makes Pygame more structured and user-friendly. The library has many built-in functions
+that simplify development at times.
+
 ## Usage/Examples
 
 #### Empty template
+
 ```python
 import PygameX as pygamex
 
+
 class MainGame(Game):
     pass
+
 
 MainGame(height=300, width=500, max_fps=60)
 ```
@@ -51,7 +55,7 @@ class MainGame(Game):
 
     def update(self):
         player = self.objects["player"]
-        keys = PygameX.key.get_pressed() # List of pressed keys
+        keys = PygameX.key.get_pressed()  # List of pressed keys
         if keys[PygameX.key.LEFT]:
             player.position = (player.position[0] - 3, player.position[1])
         if keys[PygameX.key.RIGHT]:
@@ -64,6 +68,7 @@ class MainGame(Game):
 
 MainGame(width=500, height=300, max_fps=60)
 ```
+
 ## API Reference
 
 ### Game class init
@@ -71,6 +76,7 @@ MainGame(width=500, height=300, max_fps=60)
 ```python
 class MainGame(Game):
     pass
+
 
 MainGame(width=500, height=300, caption="My first PagameX game!", max_fps=60)
 ```
@@ -85,51 +91,65 @@ MainGame(width=500, height=300, caption="My first PagameX game!", max_fps=60)
 ### Game class methods
 
 #### Ready
+
 ```python
 def ready(self):
     pass
 ```
+
 Called when the game window has been created and started.
 
 #### Init
+
 ```python
 def init(self):
     pass
 ```
+
 Called before starting the game and initializing pygame.
 
 #### On quit
+
 ```python
 def on_quit(self):
     pass
 ```
+
 Called when the game is closed.
 
 #### Quit
+
 ```python
 quit()
 ```
+
 Completes the game cycle.
 
 #### Update
+
 ```python
 def update(self):
     pass
 ```
+
 Called every time, before rendering and processing the keys.
 
 #### Render
+
 ```python
 def render(self):
     pass
 ```
+
 Called every time to draw objects.
 
 #### On event (event)
+
 ```python
 def on_event(self, event):
     pass
 ```
+
 Called every time an interaction event occurs (Includes keystroke events).
 
 | Parameter | Type           | Description                                                      |
@@ -137,10 +157,12 @@ Called every time an interaction event occurs (Includes keystroke events).
 | `event`   | `pygame event` | Pygame event about a pressed key or a set of keys and its status |
 
 #### On mouse pressed (key)
+
 ```python
 def on_mouse_pressed(self, mouse):
     pass
 ```
+
 Called every time an interaction event occurs.
 
 | Parameter | Type    | Description                                                                                          |
@@ -148,9 +170,11 @@ Called every time an interaction event occurs.
 | `mouse`   | `tuple` | An immutable list containing the `position: tuple`, `pressed key: pygame key`, `is pressed: boolean` |
 
 #### Object render mode
+
 PygameX adds the ability to use objects instead of manually drawing shapes.
 
 To enable this mode, just set `object_render_mode` to `True` in your game class.
+
 ```python
 object_render_mode = True
 ```
@@ -158,14 +182,18 @@ object_render_mode = True
 All that remains to be done is to add objects to the `objects` dictionary.
 
 #### Object
-`Object` is the main class of all objects in PygameX, it is usually not used in games because it is a dummy that exists to create other objects such as `line`, `circle`, `rect`.
+
+`Object` is the main class of all objects in PygameX, it is usually not used in games because it is a dummy that exists
+to create other objects such as `line`, `circle`, `rect`.
 
 It has a `render` function for displaying an object on the game screen.
 
 #### Rect
+
 The object inheriting the `Object` having 3 settings: `position` `size` `color`.
 
 Initializing template:
+
 ```python
 Rect(
     position=(50,50),
@@ -175,9 +203,11 @@ Rect(
 ```
 
 #### Circle
+
 The object inheriting the `Object` having 3 settings: `position` `radius` `color`.
 
 Initializing template:
+
 ```python
 Circle(
     position=(50,50),
@@ -187,9 +217,11 @@ Circle(
 ```
 
 #### Line
+
 The object inheriting the `Object` having 3 settings: `point1` `point2` `color`.
 
 Initializing template:
+
 ```python
 Line(
     point1=(50,50),
@@ -199,7 +231,10 @@ Line(
 ```
 
 ### Creating your own object
-Any objects should inherit `Object` because it contains the `render` function and is simply more convenient than creating a new class manually. As a result, the dummy of the new class will look like this:
+
+Any objects should inherit `Object` because it contains the `render` function and is simply more convenient than
+creating a new class manually. As a result, the dummy of the new class will look like this:
+
 ```python
 import pygame
 from .Object import Object
@@ -214,6 +249,7 @@ class MyCustomObject(Object):
 ```
 
 Let's add the variables `position` and `color` inside.
+
 ```python
 import pygame
 from .Object import Object
@@ -232,6 +268,7 @@ class MyCustomObject(Object):
 ```
 
 Now in the `render` method we will draw our object. In the example, a 50x50 square is simply drawn using our values.
+
 ```python
 import pygame
 from .Object import Object
@@ -251,11 +288,12 @@ class MyCustomObject(Object):
 
 Now let's try out our object in the game. Let's replace the circle from the example above with our object
 First, let's save our script in `MyCustomObject`, and then import it into the game.
+
 ```python
 import PygameX
 
 from PygameX.game import *
-from .MyCustomObject import MyCustomObject # I immediately import the object
+from .MyCustomObject import MyCustomObject  # I immediately import the object
 
 from random import randint
 
@@ -299,11 +337,15 @@ MainGame(width=500, height=300, max_fps=60)
 ```
 
 ### Scripts
+
 The library provides a quick import of all objects from the library.
+
 ```python
 from PygameX.all_objects import *
 ```
+
 If you don't need to import all the objects, you can import them individually.
+
 ```python
 from .objects.Rect import Rect # Rect
 from .objects.Circle import Circle # Circle
@@ -312,16 +354,19 @@ from .objects.TextDisplay import TextDisplay # Text
 ```
 
 ### Convenient functions
+
 PygameX provides functions for working with objects quickly.
 
 #### List of additional functions:
 
 is_point_inside_circle(point: tuple, circle: Circle)
+
 ```python
 PygameX.math.is_point_inside_circle(mouse_position, my_circle)
 ```
 
 is_point_inside_rect(point: tuple, rect: Rect)
+
 ```python
 PygameX.math.is_point_inside_rect(mouse_position, my_rect)
 ```
@@ -333,7 +378,7 @@ Install my library using `pip` in CMD or PyCharm Console:
 ```bash
 pip install PygameX
 ```
-    
+
 ## Authors
 
 - [@k0cteJl Github](https://www.github.com/k0cteJl)

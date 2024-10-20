@@ -1,12 +1,13 @@
 import pygame
 
 from .Object import Object
-
 from ..exceptions import *
+
 
 class TextDisplay(Object):
 
-    def __init__(self, position: tuple = (0, 0), size: int = 50, color: tuple = (255, 255, 255), font_name: str = "arial", font_size = 24, text: str = "Hello World!"):
+    def __init__(self, position: tuple = (0, 0), size: int = 50, color: tuple = (255, 255, 255),
+                 font_name: str = "arial", font_size=24, text: str = "Hello World!"):
         if not pygame.font.get_init():
             pygame.font.init()
             if not pygame.font.get_init():
