@@ -1,11 +1,11 @@
 from random import randint
 
 import PygameX
-
 from PygameX.game import *
 from PygameX.objects.Circle import Circle
 from PygameX.objects.TextDisplay import TextDisplay
 
+print("Join PygameX telegram: https://t.me/+9JsaNw8nyGY0NzBi")
 
 class MainGame(Game):
 
