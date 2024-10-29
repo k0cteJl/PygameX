@@ -11,6 +11,8 @@ RIGHT = pygame.K_RIGHT
 UP = pygame.K_UP
 DOWN = pygame.K_DOWN
 
+SPACE = pygame.K_SPACE
+
 K_0 = pygame.K_0
 K_1 = pygame.K_1
 K_2 = pygame.K_2

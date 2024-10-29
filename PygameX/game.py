@@ -1,3 +1,5 @@
+from typing import Dict, Any
+
 import pygame
 
 import PygameX.key as key
@@ -10,7 +12,9 @@ class Game:
     """
 
     background_color = (0, 0, 0)
-    objects = {}
+    objects: dict[str, Any] = {}
+    invisible_objects: list[str] = []
+    hitboxes = {}
 
     def __init__(self, width: int = 100, height: int = 100, caption: str = "PygameX Game", max_fps: int = 60):
         self.width = width
@@ -75,5 +79,5 @@ class Game:
     def __render__(self):
         self.screen.fill(self.background_color)
         for obj in self.objects.keys():
-            if issubclass(self.objects[obj].__class__, Object):
+            if issubclass(self.objects[obj].__class__, Object) and (not obj in self.invisible_objects):
                 self.objects[obj].render(self.screen)
