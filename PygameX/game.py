@@ -1,5 +1,3 @@
-from typing import Dict, Any
-
 import pygame
 
 import PygameX.key as key
@@ -12,7 +10,7 @@ class Game:
     """
 
     background_color = (0, 0, 0)
-    objects: dict[str, Any] = {}
+    objects: dict[str, any] = {}
     invisible_objects: list[str] = []
     hitboxes = {}
 

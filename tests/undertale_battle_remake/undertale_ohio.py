@@ -2,8 +2,6 @@
 
 from PygameX import *
 
-import attack_moves
-
 class UndertaleGame(Game):
 
     #object_render_mode = True # На случай если 0.2 не скачивается стабильно.
@@ -26,8 +24,6 @@ class UndertaleGame(Game):
             position_limits = math.get_global_rect_inner_limits(self, battle_area) # эта функция не вписывается, из-за чего я её удалю позже
         )
         self.objects["player"] = player
-
-        attack_moves.ball_shoot(self)
 
     def update(self):
         player_speed = 2.5

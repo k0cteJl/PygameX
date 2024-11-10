@@ -5,7 +5,6 @@ class FlappyBird(Game):
     background_color = color.LIGHT_BLUE
 
     def init(self):
-        self.score = 0
         self.colons: list[str] = []
         self.in_pause = False
         self.bird_y_dir = 0

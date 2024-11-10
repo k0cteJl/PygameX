@@ -4,8 +4,8 @@
 # Telegram: @k0cteJl
 #
 # -----------------------------
-from .all_objects import *
 from .game import *
+from .all_objects import *
 
 import PygameX.color as color
 import PygameX.key as key

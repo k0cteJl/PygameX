@@ -11,10 +11,8 @@ def distance_to(p1: tuple, p2: tuple):
     k2 = p1[1] - p2[1]
     return mth.sqrt((k1 * k1) + (k2 * k2))
 
-
 def is_point_inside_circle(point: tuple, circle: Circle):
     return distance_to(point, circle.position) < circle.radius
-
 
 def is_point_inside_rect(point: tuple, rect: Rect):
     px, py = point
